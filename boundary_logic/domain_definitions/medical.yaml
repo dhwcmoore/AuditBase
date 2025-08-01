@@ -1,0 +1,27 @@
+---
+domain:
+  name: "Medical Classification"
+  unit: "Risk Score"
+  description: >
+    General medical classification based on patient risk scores
+    used in clinical triage or diagnostic systems
+
+boundaries:
+  - range: [0.0, 2.5]
+    category: "Low Risk"
+    color: "#00FF00"
+  - range: [2.5, 5.0]
+    category: "Moderate Risk"
+    color: "#FFFF00"
+  - range: [5.0, 7.5]
+    category: "High Risk"
+    color: "#FFA500"
+  - range: [7.5, 10.0]
+    category: "Critical"
+    color: "#FF0000"
+
+global_bounds: [0.0, 10.0]
+
+monitoring:
+  base_tolerance: 0.2
+  confidence_thresholds: [0.2, 0.5, 1.0]

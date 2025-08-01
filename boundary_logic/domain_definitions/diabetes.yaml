@@ -1,0 +1,22 @@
+---
+domain:
+  name: "Diabetes Classification"
+  unit: "HbA1c %"
+  description: "Clinical diabetes classification based on HbA1c levels"
+
+boundaries:
+  - range: [0.0, 5.7]
+    category: "Normal"
+    color: "#00FF00"
+  - range: [5.7, 6.5]
+    category: "Prediabetes"
+    color: "#FFFF00"
+  - range: [6.5, 20.0]
+    category: "Diabetes"
+    color: "#FF0000"
+
+global_bounds: [0.0, 20.0]
+
+monitoring:
+  base_tolerance: 0.1
+  confidence_thresholds: [0.05, 0.1, 0.3]

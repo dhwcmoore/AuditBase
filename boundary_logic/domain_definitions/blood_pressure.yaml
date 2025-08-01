@@ -1,0 +1,25 @@
+---
+domain:
+  name: "Blood Pressure Classification"
+  unit: "mmHg (Systolic)"
+  description: "Systolic blood pressure classification"
+
+boundaries:
+  - range: [0, 120]
+    category: "Normal"
+    color: "#00FF00"
+  - range: [120, 130]
+    category: "Elevated"
+    color: "#FFFF00"
+  - range: [130, 140]
+    category: "Stage 1 Hypertension"
+    color: "#FFA500"
+  - range: [140, 300]
+    category: "Stage 2 Hypertension"
+    color: "#FF0000"
+
+global_bounds: [0, 300]
+
+monitoring:
+  base_tolerance: 2.0
+  confidence_thresholds: [1.0, 2.0, 5.0]

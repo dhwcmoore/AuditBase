@@ -1,0 +1,11 @@
+---
+domain:
+  name: "Basel III Corporate Loans"
+  regulation: "Basel III Standardized Approach"
+
+categories:
+  - name: "Corporate_Standard_100%"
+    range: [100000, 999999999]
+    risk_weight: 1.0
+    capital_ratio: 0.08
+    description: "Standard corporate exposures (Basel III Para 65)"

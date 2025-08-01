@@ -1,0 +1,20 @@
+---
+domain:
+  name: "AML Cash Transaction Monitoring"
+  unit: "$"
+  description: >
+    Anti-Money Laundering classification based on cash transaction thresholds
+
+boundaries:
+  - range: [0.0, 10000.0]
+    category: "Below CTR Threshold"
+    color: "#00FF00"
+  - range: [10000.0, 999999999.0]
+    category: "CTR Required"
+    color: "#FF0000"
+
+global_bounds: [0.0, 999999999.0]
+
+monitoring:
+  base_tolerance: 100.0
+  confidence_thresholds: [100.0, 500.0, 1000.0]

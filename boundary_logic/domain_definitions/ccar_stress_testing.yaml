@@ -1,0 +1,51 @@
+---
+domain:
+  name: "CCAR Comprehensive Capital Analysis"
+  regulatory_authority: "Federal Reserve System"
+  regulation: "SR 15-18, 12 CFR Part 225"
+
+stress_scenarios:
+  - name: "Baseline_Scenario"
+    gdp_growth: [2.0, 3.0]
+    unemployment: [3.5, 4.5]
+    house_prices: [3.0, 5.0]
+    description: "Expected economic conditions"
+
+  - name: "Adverse_Scenario"
+    gdp_decline: [-2.0, -1.0]
+    unemployment: [7.0, 9.0]
+    house_prices: [-5.0, -2.0]
+    description: "Moderate economic downturn"
+
+  - name: "Severely_Adverse_Scenario"
+    gdp_decline: [-8.0, -4.0]
+    unemployment: [10.0, 12.5]
+    house_prices: [-25.0, -15.0]
+    description: "Severe economic downturn (2008-level)"
+
+loss_rate_mappings:
+  credit_cards:
+    baseline: 0.05
+    adverse: 0.12
+    severely_adverse: 0.18
+
+  first_lien_mortgages:
+    baseline: 0.01
+    adverse: 0.03
+    severely_adverse: 0.08
+
+  commercial_real_estate:
+    baseline: 0.02
+    adverse: 0.06
+    severely_adverse: 0.12
+
+  commercial_industrial:
+    baseline: 0.03
+    adverse: 0.08
+    severely_adverse: 0.15
+
+capital_requirements:
+  tier1_common_minimum: 0.045  # 4.5%
+  capital_conservation_buffer: 0.025  # 2.5%
+  stress_capital_buffer: "calculated"  # From stress test results
+  total_minimum: 0.07  # 7.0%

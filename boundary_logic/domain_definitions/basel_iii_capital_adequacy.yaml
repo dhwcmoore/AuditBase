@@ -1,0 +1,24 @@
+---
+domain:
+  name: "Basel III Capital Adequacy"
+  unit: "%"
+  description: >
+    Basel III tiered capital adequacy classification for banking
+    institutions
+
+boundaries:
+  - range: [0.0, 8.0]
+    category: "Below Requirement"
+    color: "#FF0000"
+  - range: [8.0, 10.5]
+    category: "Meets Requirement"
+    color: "#FFFF00"
+  - range: [10.5, 100.0]
+    category: "Exceeds Requirement"
+    color: "#00FF00"
+
+global_bounds: [0.0, 100.0]
+
+monitoring:
+  base_tolerance: 0.1
+  confidence_thresholds: [0.05, 0.1, 0.3]

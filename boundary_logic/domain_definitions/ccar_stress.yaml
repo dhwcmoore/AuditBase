@@ -1,0 +1,13 @@
+---
+domain:
+  name: "CCAR Stress Testing"
+  regulation: "Federal Reserve SR 15-18"
+
+stress_scenarios:
+  - name: "Severely_Adverse_GDP"
+    range: [-8.0, -4.0]  # GDP decline %
+    loss_multiplier: 2.5
+
+  - name: "Unemployment_Shock"
+    range: [10.0, 15.0]  # Unemployment %
+    credit_loss_rate: 0.15

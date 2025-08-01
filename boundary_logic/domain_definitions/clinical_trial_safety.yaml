@@ -1,0 +1,25 @@
+---
+domain:
+  name: "Clinical Trial Safety Monitoring"
+  regulatory_authority: "FDA 21 CFR 312.32"
+
+categories:
+  - name: "No_Adverse_Events_CONTINUE"
+    adverse_event_rate: [0, 0.05]
+    description: "Background adverse event rate"
+    trial_status: "Continue_as_planned"
+
+  - name: "Expected_Adverse_Events_MONITOR"
+    adverse_event_rate: [0.05, 0.15]
+    description: "Expected side effect profile"
+    action_required: "Enhanced_safety_monitoring"
+
+  - name: "Unexpected_Safety_Signal_INVESTIGATE"
+    adverse_event_rate: [0.15, 0.30]
+    description: "Potential safety concern"
+    action_required: "Safety_review_committee_evaluation"
+
+  - name: "Trial_Suspension_CRITICAL"
+    adverse_event_rate: [0.30, 1.0]
+    description: "Unacceptable safety profile"
+    action_required: "Immediate_trial_suspension_FDA_notification"

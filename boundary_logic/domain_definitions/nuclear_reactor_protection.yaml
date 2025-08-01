@@ -1,0 +1,32 @@
+---
+domain:
+  name: "Nuclear Reactor Protection System"
+  regulatory_authority: "NRC 10 CFR 50.55a"
+  safety_classification: "Class_1E_Safety_Related"
+
+categories:
+  - name: "Normal_Operation_SAFE"
+    core_temp_celsius: [280, 315]
+    pressure_mpa: [15.0, 15.8]
+    neutron_flux_percent: [0, 105]
+    description: "Normal operating envelope"
+
+  - name: "Monitored_Condition_CAUTION"
+    core_temp_celsius: [315, 350]
+    pressure_mpa: [15.8, 17.0]
+    neutron_flux_percent: [105, 115]
+    description: "Increased monitoring required"
+    action_required: "Enhanced surveillance"
+
+  - name: "Automatic_SCRAM_CRITICAL"
+    core_temp_celsius: [350, 400]
+    pressure_mpa: [17.0, 18.5]
+    neutron_flux_percent: [115, 125]
+    description: "Automatic reactor shutdown"
+    action_required: "SCRAM_within_seconds"
+
+  - name: "Emergency_Core_Cooling_EMERGENCY"
+    core_temp_celsius: [400, 1000]
+    pressure_mpa: [18.5, 25.0]
+    description: "ECCS activation required"
+    action_required: "Emergency_cooling_systems"

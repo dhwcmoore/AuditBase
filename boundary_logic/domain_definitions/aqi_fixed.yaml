@@ -1,0 +1,29 @@
+---
+domain:
+  name: "EPA Air Quality Index (Fixed)"
+  unit: "AQI"
+  description: >
+    US EPA Air Quality Index classification for public health reporting (Fixed ranges)
+boundaries:
+  - range: [0.0, 50.0]
+    category: "Good"
+    color: "#00E400"
+  - range: [50.0, 100.0]
+    category: "Moderate"
+    color: "#FFFF00"
+  - range: [100.0, 150.0]
+    category: "Unhealthy for Sensitive Groups"
+    color: "#FF7E00"
+  - range: [150.0, 200.0]
+    category: "Unhealthy"
+    color: "#FF0000"
+  - range: [200.0, 300.0]
+    category: "Very Unhealthy"
+    color: "#8F3F97"
+  - range: [300.0, 500.0]
+    category: "Hazardous"
+    color: "#7E0023"
+global_bounds: [0.0, 500.0]
+monitoring:
+  base_tolerance: 1.0
+  confidence_thresholds: [5.0, 10.0, 20.0]

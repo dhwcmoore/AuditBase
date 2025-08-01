@@ -1,0 +1,30 @@
+package "engine_interface" (
+  directory = "engine_interface"
+  description = ""
+  requires =
+  "veribound-process-architecture.flocq_engine
+   veribound-process-architecture.runtime_classifier
+   yojson"
+  archive(byte) = "engine_interface.cma"
+  archive(native) = "engine_interface.cmxa"
+  plugin(byte) = "engine_interface.cma"
+  plugin(native) = "engine_interface.cmxs"
+)
+package "flocq_engine" (
+  directory = "flocq_engine"
+  description = ""
+  requires = "str yojson"
+  archive(byte) = "flocq_engine.cma"
+  archive(native) = "flocq_engine.cmxa"
+  plugin(byte) = "flocq_engine.cma"
+  plugin(native) = "flocq_engine.cmxs"
+)
+package "runtime_classifier" (
+  directory = "runtime_classifier"
+  description = ""
+  requires = ""
+  archive(byte) = "runtime_classifier.cma"
+  archive(native) = "runtime_classifier.cmxa"
+  plugin(byte) = "runtime_classifier.cma"
+  plugin(native) = "runtime_classifier.cmxs"
+)

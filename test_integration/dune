@@ -1,0 +1,3 @@
+(executable
+ (name test_priority_2a)
+ (libraries veribound-process-architecture.engine_interface veribound-process-architecture.runtime_classifier))

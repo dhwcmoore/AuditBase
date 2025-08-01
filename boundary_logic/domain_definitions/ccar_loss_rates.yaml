@@ -1,0 +1,22 @@
+---
+domain:
+  name: "CCAR Loss Rate Classification"
+  regulatory_authority: "Federal Reserve"
+
+categories:
+  - name: "Credit_Card_Severely_Adverse_22%"
+    range: [0.21, 0.23]
+    description: "Fed prescribed 22% loss rate for credit cards"
+    regulatory_basis: "CCAR 2024 Severely Adverse Scenario"
+
+  - name: "Mortgage_Severely_Adverse_5%"
+    range: [0.04, 0.06]
+    description: "Fed prescribed 5% loss rate for mortgages"
+
+  - name: "Commercial_Loans_Severely_Adverse_12%"
+    range: [0.11, 0.13]
+    description: "Fed prescribed 12% loss rate for commercial loans"
+
+  - name: "Commercial_RE_Severely_Adverse_15%"
+    range: [0.14, 0.16]
+    description: "Fed prescribed 15% loss rate for commercial RE"

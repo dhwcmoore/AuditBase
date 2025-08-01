@@ -1,0 +1,23 @@
+---
+domain:
+  name: "Class III Medical Device Performance"
+  regulatory_authority: "FDA 21 CFR 820.30"
+
+categories:
+  - name: "Within_Specification_COMPLIANT"
+    accuracy_percent: [95.0, 105.0]
+    precision_cv_percent: [0, 5.0]
+    description: "Device performs within specification"
+
+  - name: "Marginal_Performance_MONITOR"
+    accuracy_percent: [90.0, 94.9]
+    precision_cv_percent: [5.0, 10.0]
+    description: "Performance degradation detected"
+    action_required: "Increased_calibration_frequency"
+
+  - name: "Out_of_Specification_FAIL"
+    accuracy_percent: [0, 89.9]
+    precision_cv_percent: [10.0, 100.0]
+    description: "Device failure - patient safety risk"
+    action_required: "Immediate_device_replacement"
+    regulatory_reporting: "FDA_adverse_event_report_required"

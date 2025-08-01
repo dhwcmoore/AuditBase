@@ -1,0 +1,201 @@
+(lang dune 3.19)
+(name veribound-process-architecture)
+(sections
+ (lib .)
+ (libexec .)
+ (bin ../../bin)
+ (doc ../../doc/veribound-process-architecture))
+(files
+ (lib
+  (META
+   dune-package
+   engine_interface/boundary_classifier.ml
+   engine_interface/domain_manager.ml
+   engine_interface/engine_interface.a
+   engine_interface/engine_interface.cma
+   engine_interface/engine_interface.cmi
+   engine_interface/engine_interface.cmt
+   engine_interface/engine_interface.cmx
+   engine_interface/engine_interface.cmxa
+   engine_interface/engine_interface.ml
+   engine_interface/engine_interface__Boundary_classifier.cmi
+   engine_interface/engine_interface__Boundary_classifier.cmt
+   engine_interface/engine_interface__Boundary_classifier.cmx
+   engine_interface/engine_interface__Domain_manager.cmi
+   engine_interface/engine_interface__Domain_manager.cmt
+   engine_interface/engine_interface__Domain_manager.cmx
+   flocq_engine/engine_interface.ml
+   flocq_engine/extracted_flocq.ml
+   flocq_engine/flocq_engine.a
+   flocq_engine/flocq_engine.cma
+   flocq_engine/flocq_engine.cmi
+   flocq_engine/flocq_engine.cmt
+   flocq_engine/flocq_engine.cmx
+   flocq_engine/flocq_engine.cmxa
+   flocq_engine/flocq_engine.ml
+   flocq_engine/flocq_engine__.cmi
+   flocq_engine/flocq_engine__.cmt
+   flocq_engine/flocq_engine__.cmx
+   flocq_engine/flocq_engine__.ml
+   flocq_engine/flocq_engine__Engine_interface.cmi
+   flocq_engine/flocq_engine__Engine_interface.cmt
+   flocq_engine/flocq_engine__Engine_interface.cmx
+   flocq_engine/flocq_engine__Extracted_flocq.cmi
+   flocq_engine/flocq_engine__Extracted_flocq.cmt
+   flocq_engine/flocq_engine__Extracted_flocq.cmx
+   flocq_engine/flocq_engine__Flocq_engines.cmi
+   flocq_engine/flocq_engine__Flocq_engines.cmt
+   flocq_engine/flocq_engine__Flocq_engines.cmx
+   flocq_engine/flocq_engine__Shared_types.cmi
+   flocq_engine/flocq_engine__Shared_types.cmt
+   flocq_engine/flocq_engine__Shared_types.cmx
+   flocq_engine/flocq_engines.ml
+   flocq_engine/shared_types.ml
+   runtime_classifier/classifier.ml
+   runtime_classifier/runtime_classifier.a
+   runtime_classifier/runtime_classifier.cma
+   runtime_classifier/runtime_classifier.cmi
+   runtime_classifier/runtime_classifier.cmt
+   runtime_classifier/runtime_classifier.cmx
+   runtime_classifier/runtime_classifier.cmxa
+   runtime_classifier/runtime_classifier.ml
+   runtime_classifier/runtime_classifier__Classifier.cmi
+   runtime_classifier/runtime_classifier__Classifier.cmt
+   runtime_classifier/runtime_classifier__Classifier.cmx))
+ (libexec
+  (engine_interface/engine_interface.cmxs
+   flocq_engine/flocq_engine.cmxs
+   runtime_classifier/runtime_classifier.cmxs))
+ (bin
+  (debug_boundaries
+   debug_final_boundaries
+   test_boundary_classifier
+   test_domain_loader
+   test_multiple_domains
+   test_overlap_check
+   veribound))
+ (doc (README.md)))
+(library
+ (name veribound-process-architecture.engine_interface)
+ (kind normal)
+ (archives
+  (byte engine_interface/engine_interface.cma)
+  (native engine_interface/engine_interface.cmxa))
+ (plugins
+  (byte engine_interface/engine_interface.cma)
+  (native engine_interface/engine_interface.cmxs))
+ (native_archives engine_interface/engine_interface.a)
+ (requires
+  veribound-process-architecture.flocq_engine
+  veribound-process-architecture.runtime_classifier
+  yojson)
+ (main_module_name Engine_interface)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name engine_interface)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Engine_interface)
+      (impl (path engine_interface/engine_interface.ml-gen))))
+    (name Engine_interface)
+    (modules
+     (module
+      (obj_name engine_interface__Boundary_classifier)
+      (visibility public)
+      (source
+       (path Boundary_classifier)
+       (impl (path engine_interface/boundary_classifier.ml))))
+     (module
+      (obj_name engine_interface__Domain_manager)
+      (visibility public)
+      (source
+       (path Domain_manager)
+       (impl (path engine_interface/domain_manager.ml))))))
+   (wrapped true))))
+(library
+ (name veribound-process-architecture.flocq_engine)
+ (kind normal)
+ (archives
+  (byte flocq_engine/flocq_engine.cma)
+  (native flocq_engine/flocq_engine.cmxa))
+ (plugins
+  (byte flocq_engine/flocq_engine.cma)
+  (native flocq_engine/flocq_engine.cmxs))
+ (native_archives flocq_engine/flocq_engine.a)
+ (requires yojson str)
+ (main_module_name Flocq_engine)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name flocq_engine__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Flocq_engine__)
+      (impl (path flocq_engine/flocq_engine__.ml-gen))))
+    (name Flocq_engine)
+    (modules
+     (module
+      (obj_name flocq_engine__Engine_interface)
+      (visibility public)
+      (source
+       (path Engine_interface)
+       (impl (path flocq_engine/engine_interface.ml))))
+     (module
+      (obj_name flocq_engine__Extracted_flocq)
+      (visibility public)
+      (source
+       (path Extracted_flocq)
+       (impl (path flocq_engine/extracted_flocq.ml))))
+     (module
+      (obj_name flocq_engine)
+      (visibility public)
+      (source (path Flocq_engine) (impl (path flocq_engine/flocq_engine.ml))))
+     (module
+      (obj_name flocq_engine__Flocq_engines)
+      (visibility public)
+      (source
+       (path Flocq_engines)
+       (impl (path flocq_engine/flocq_engines.ml))))
+     (module
+      (obj_name flocq_engine__Shared_types)
+      (visibility public)
+      (source (path Shared_types) (impl (path flocq_engine/shared_types.ml))))))
+   (wrapped true))))
+(library
+ (name veribound-process-architecture.runtime_classifier)
+ (kind normal)
+ (archives
+  (byte runtime_classifier/runtime_classifier.cma)
+  (native runtime_classifier/runtime_classifier.cmxa))
+ (plugins
+  (byte runtime_classifier/runtime_classifier.cma)
+  (native runtime_classifier/runtime_classifier.cmxs))
+ (native_archives runtime_classifier/runtime_classifier.a)
+ (main_module_name Runtime_classifier)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name runtime_classifier)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Runtime_classifier)
+      (impl (path runtime_classifier/runtime_classifier.ml-gen))))
+    (name Runtime_classifier)
+    (modules
+     (module
+      (obj_name runtime_classifier__Classifier)
+      (visibility public)
+      (source
+       (path Classifier)
+       (impl (path runtime_classifier/classifier.ml))))))
+   (wrapped true))))

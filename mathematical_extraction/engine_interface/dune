@@ -1,0 +1,5 @@
+(library
+ (name engine_interface)
+ (public_name veribound-process-architecture.engine_interface)
+ (modules boundary_classifier domain_manager)
+ (libraries veribound-process-architecture.flocq_engine veribound-process-architecture.runtime_classifier yojson))

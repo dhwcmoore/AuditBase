@@ -1,0 +1,38 @@
+---
+domain:
+  name: "Basel III Liquidity Risk"
+  regulatory_authority: "Basel Committee"
+  regulation: "BCBS 238 (LCR) and BCBS 295 (NSFR)"
+
+liquidity_coverage_ratio:
+  minimum_requirement: 1.0  # 100%
+  formula: "HQLA / Net_Cash_Outflows_30_days"
+  reporting: "daily"
+
+net_stable_funding_ratio:
+  minimum_requirement: 1.0  # 100%
+  formula: "Available_Stable_Funding / Required_Stable_Funding"
+  reporting: "quarterly"
+
+hqla_categories:
+  - name: "Level_1_HQLA"
+    haircut: 0.0
+    includes: ["central_bank_reserves", "aaa_government_bonds"]
+    unlimited: true
+
+  - name: "Level_2A_HQLA"
+    haircut: 0.15  # 15%
+    includes: ["aa_government_bonds", "aaa_covered_bonds"]
+    cap_percentage: 0.4  # Max 40% of total HQLA
+
+  - name: "Level_2B_HQLA"
+    haircut: 0.25  # 25%
+    includes: ["a_corporate_bonds", "equity_in_major_index"]
+    cap_percentage: 0.15  # Max 15% of total HQLA
+
+cash_outflow_rates:
+  retail_deposits_stable: 0.05    # 5%
+  retail_deposits_unstable: 0.10  # 10%
+  corporate_deposits_operational: 0.25  # 25%
+  corporate_deposits_non_operational: 1.0  # 100%
+  unsecured_wholesale_funding: 1.0  # 100%

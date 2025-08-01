@@ -1,0 +1,25 @@
+---
+domain:
+  name: "Nuclear Emergency Action Levels"
+  regulatory_authority: "NRC NUREG-0654"
+
+categories:
+  - name: "Notification_Unusual_Event"
+    severity_level: 1
+    description: "Events with minimal safety significance"
+    response: "Notify_NRC_within_4_hours"
+
+  - name: "Alert_Level_ELEVATED"
+    severity_level: 2
+    description: "Events with potential degradation of safety"
+    response: "Notify_offsite_authorities_15_minutes"
+
+  - name: "Site_Area_Emergency_SERIOUS"
+    severity_level: 3
+    description: "Events with actual/likely major core/fuel damage"
+    response: "Recommend_evacuation_2_mile_radius"
+
+  - name: "General_Emergency_MAXIMUM"
+    severity_level: 4
+    description: "Events with core melt or uncontrolled release"
+    response: "Immediate_evacuation_10_mile_radius"

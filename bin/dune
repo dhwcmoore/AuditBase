@@ -1,0 +1,6 @@
+(executable
+ (public_name veribound)
+ (name main)
+ (libraries
+  cmdliner
+  veribound-process-architecture.engine_interface))

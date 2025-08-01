@@ -1,0 +1,42 @@
+---
+domain:
+  name: "MiFID II Best Execution"
+  regulatory_authority: "ESMA"
+  regulation: "Commission Delegated Directive 2017/593"
+
+execution_factors:
+  - name: "Price_Improvement"
+    weight: 0.4
+    measurement: "basis_points_vs_midpoint"
+    threshold: 1.0  # 1bp minimum improvement
+
+  - name: "Speed_Execution"
+    weight: 0.25
+    measurement: "milliseconds"
+    threshold: 100  # <100ms for liquid stocks
+
+  - name: "Likelihood_Settlement"
+    weight: 0.2
+    measurement: "probability"
+    threshold: 0.999  # 99.9% settlement certainty
+
+  - name: "Total_Consideration"
+    weight: 0.15
+    measurement: "net_price_plus_costs"
+    includes: ["execution_fees", "clearing_fees", "settlement_costs"]
+
+venue_categories:
+  - name: "Regulated_Market_BEST"
+    price_improvement: [1.0, 10.0]  # bp
+    speed: [10, 50]  # ms
+    settlement_prob: [0.999, 1.0]
+
+  - name: "MTF_Dark_Pool_GOOD"
+    price_improvement: [0.5, 3.0]
+    speed: [20, 100]
+    settlement_prob: [0.995, 0.999]
+
+  - name: "Systematic_Internalizer_ACCEPTABLE"
+    price_improvement: [0.0, 2.0]
+    speed: [50, 200]
+    settlement_prob: [0.99, 0.995]

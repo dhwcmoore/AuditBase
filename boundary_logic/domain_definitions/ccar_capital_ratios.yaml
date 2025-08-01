@@ -1,0 +1,18 @@
+---
+domain:
+  name: "CCAR Capital Adequacy"
+  regulatory_authority: "Federal Reserve"
+
+categories:
+  - name: "Capital_Ratio_PASS_VERIFIED"
+    range: [9.5, 100.0]
+    description: "Meets Fed minimum 9.5% requirement"
+    regulatory_basis: "4.5% minimum + 2.5% CCB + 2.5% SCB"
+
+  - name: "Capital_Ratio_MARGINAL_VERIFIED"
+    range: [7.0, 9.49]
+    description: "Above legal minimum but below CCAR requirement"
+
+  - name: "Capital_Ratio_FAIL_VERIFIED"
+    range: [0.0, 6.99]
+    description: "Below legal minimum - immediate regulatory action"

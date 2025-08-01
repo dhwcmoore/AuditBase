@@ -1,0 +1,35 @@
+---
+domain:
+  name: "FRTB Market Risk Capital"
+  regulatory_authority: "Basel Committee"
+  regulation: "BCBS 352 - Fundamental Review Trading Book"
+
+risk_measures:
+  - name: "Expected_Shortfall_97.5"
+    percentile: 0.975
+    horizon_days: 10
+    description: "Replaces VaR with Expected Shortfall"
+
+  - name: "Stressed_ES"
+    stress_period: "2007-2008_financial_crisis"
+    calibration: "continuous_12_month_period"
+
+liquidity_horizons:
+  equity_large_cap: 10  # days
+  equity_small_cap: 20
+  government_bonds: 10
+  credit_investment_grade: 20
+  credit_high_yield: 60
+  commodities: 20
+  fx_major_pairs: 10
+  fx_emerging: 20
+
+non_modellable_risks:
+  capital_multiplier: 3.0
+  description: "Risks that cannot be modelled adequately"
+  examples: ["illiquid_positions", "model_breakdown", "extreme_scenarios"]
+
+capital_calculation:
+  standardized_approach: "SA method for non-internal-model banks"
+  internal_models_approach: "IMA for sophisticated banks"
+  minimum_capital_floor: 0.72  # 72.5% of standardized approach
