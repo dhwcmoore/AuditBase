@@ -1,1 +1,3 @@
-../../../../../default/mathematical_extraction/ocaml_extraction/flocq_engines.ml
+(* File: working_system/src/flocq/flocq_engines.ml *)
+type domain = Shared_types.domain
+type boundary = Shared_types.boundary
