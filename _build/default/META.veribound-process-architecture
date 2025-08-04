@@ -1,10 +1,7 @@
 package "engine_interface" (
   directory = "engine_interface"
   description = ""
-  requires =
-  "veribound-process-architecture.flocq_engine
-   veribound-process-architecture.runtime_classifier
-   yojson"
+  requires = "veribound-process-architecture.runtime_classifier yojson"
   archive(byte) = "engine_interface.cma"
   archive(native) = "engine_interface.cmxa"
   plugin(byte) = "engine_interface.cma"
@@ -22,7 +19,7 @@ package "flocq_engine" (
 package "runtime_classifier" (
   directory = "runtime_classifier"
   description = ""
-  requires = ""
+  requires = "yojson"
   archive(byte) = "runtime_classifier.cma"
   archive(native) = "runtime_classifier.cmxa"
   plugin(byte) = "runtime_classifier.cma"

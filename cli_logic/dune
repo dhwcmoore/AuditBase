@@ -1,0 +1,6 @@
+(library
+ (name cli_logic)
+ (modules veribound_inspect veribound_verify veribound_audit veribound_pipeline)
+ (libraries
+  veribound-process-architecture.engine_interface
+  yojson cmdliner))

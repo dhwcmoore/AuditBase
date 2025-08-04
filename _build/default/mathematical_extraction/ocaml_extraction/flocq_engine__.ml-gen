@@ -11,3 +11,6 @@ module Flocq_engines = Flocq_engine__Flocq_engines
 
 (** @canonical Flocq_engine.Shared_types *)
 module Shared_types = Flocq_engine__Shared_types
+
+module Flocq_engine__ = struct end
+[@@deprecated "this module is shadowed"]

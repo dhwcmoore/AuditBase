@@ -1,4 +1,5 @@
 (library
  (name runtime_classifier)
  (public_name veribound-process-architecture.runtime_classifier)
- (modules classifier))
+ (modules runtime_classifier)
+ (libraries yojson))

@@ -3,7 +3,7 @@ open Engine_interface
 let () = 
   let test_file = "boundary_logic/domain_definitions/diabetes.yaml" in
   Printf.printf "Testing BoundaryClassifier conversion and classification...\n";
-  match Boundary_classifier.BoundaryClassifier.classify_from_yaml test_file "150" with
+  match Boundary_classifier.classify_from_yaml test_file "150" with
   | Ok result -> 
     Printf.printf "✅ SUCCESS!\n";
     Printf.printf "Input: 150\n";

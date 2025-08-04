@@ -12,8 +12,8 @@ let string_of_issue = function
   | Gap (l, u) -> Printf.sprintf "[Gap] %.2f – %.2f" l u
   | OutOfGlobalBounds (l, u) -> Printf.sprintf "[OutOfGlobalBounds] %.2f – %.2f" l u
 
-let extract_ranges (boundaries : Domain_manager.DomainManager.boundary list) =
-  List.map (fun (boundary : Domain_manager.DomainManager.boundary) -> 
+let extract_ranges (boundaries : Domain_manager.boundary list) =
+  List.map (fun (boundary : Domain_manager.boundary) -> 
     (boundary.lower, boundary.upper)
   ) boundaries
   |> List.sort (fun (l1, _) (l2, _) -> Float.compare l1 l2)
@@ -56,7 +56,7 @@ let analyze_boundaries boundaries global_bounds =
   overlaps @ gaps @ global_issues
 
 let run_test file =
-  match Domain_manager.DomainManager.load_domain file with
+  match Domain_manager.load_domain file with
   | Error err ->
       Printf.printf "Failed to load domain file: %s\n" file;
       Printf.printf "  Error: %s\n" err
@@ -72,3 +72,7 @@ let run_test file =
         Printf.printf "  ⚠️ Found %d issues:\n" (List.length issues);        
         List.iter (fun issue -> Printf.printf "    %s\n" (string_of_issue issue)) issues
       )
+
+     let find_coverage_issues boundaries global_bounds =
+  analyze_boundaries boundaries global_bounds
+ 

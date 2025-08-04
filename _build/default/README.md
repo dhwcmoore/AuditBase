@@ -1,4 +1,4 @@
-# VeriBound 2.0 – Developer CLI Demonstration
+# VeriBound - 2025-08-01
 
 This developer-facing CLI walkthrough demonstrates VeriBound’s core capabilities in symbolic verification, mathematical integrity, and audit readiness.
 

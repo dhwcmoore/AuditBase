@@ -11,7 +11,7 @@ let inspect_cmd =
     let domain_file = Printf.sprintf "boundary_logic/domain_definitions/%s.yaml" domain in
     let value_str = Float.to_string value in
     try
-      match BC.BoundaryClassifier.classify_from_yaml domain_file value_str with
+      match BC.classify_from_yaml domain_file value_str with
       | Ok result ->
           let basic_output = Printf.sprintf "Classification Result for %s = %.2f:\n  Category: %s\n  Confidence: %s" domain value result.category result.confidence in
           let detailed_output = if show_process then Printf.sprintf "%s\n  Process Details:\n    - Domain loaded from: %s\n    - Classification engine: %s" basic_output domain_file result.engine else basic_output in
@@ -27,7 +27,7 @@ let verify_cmd =
   let verify_fn domain show_boundaries =
     let domain_file = Printf.sprintf "boundary_logic/domain_definitions/%s.yaml" domain in
     try
-      match DM.DomainManager.load_domain domain_file with
+      match DM.load_domain domain_file with
       | Ok domain_result ->
           let basic_info = Printf.sprintf "Domain Verification for %s:\n  Name: %s\n  Unit: %s\n  Boundary Count: %d" domain domain_result.name domain_result.unit (List.length domain_result.boundaries) in
           let boundary_details = if show_boundaries then 
@@ -51,7 +51,7 @@ let test_pipeline_cmd =
         let domain_path = Filename.concat domain_dir file in
         let domain_name = Filename.chop_suffix file ".yaml" in
         try
-          match DM.DomainManager.load_domain domain_path with
+          match DM.load_domain domain_path with
           | Ok domain_result ->
               let boundary_count = List.length domain_result.boundaries in
               Printf.sprintf "  %s: ✅ Domain loaded (%d boundaries)" domain_name boundary_count

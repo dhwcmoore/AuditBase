@@ -2,7 +2,7 @@ open Engine_interface
 
 let test_diabetes () =
   Printf.printf "Testing diabetes.yaml...\n";
-  match Domain_manager.DomainManager.load_domain "../boundary_logic/domain_definitions/diabetes.yaml" with
+  match Domain_manager.load_domain "boundary_logic/domain_definitions/diabetes.yaml" with
   | Ok result ->
       Printf.printf "✓ SUCCESS: Loaded domain with %d boundaries\n"
         (List.length result.boundaries);

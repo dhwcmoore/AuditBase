@@ -3,7 +3,7 @@ open Engine_interface
 let test_boundaries () =
   Printf.printf "Reading file directly...\n";
   let content = 
-    let ic = open_in "../boundary_logic/domain_definitions/diabetes.yaml" in
+    let ic = open_in "boundary_logic/domain_definitions/diabetes.yaml" in
     let content = really_input_string ic (in_channel_length ic) in
     close_in ic; content in
   
@@ -11,7 +11,7 @@ let test_boundaries () =
   Printf.printf "===================\n";
   
   (* Test the parsing *)
-  match Domain_manager.DomainManager.load_domain "../boundary_logic/domain_definitions/diabetes.yaml" with
+  match Domain_manager.load_domain "boundary_logic/domain_definitions/diabetes.yaml" with
   | Ok result ->
       Printf.printf "Domain loaded but boundaries count: %d\n" (List.length result.boundaries)
   | Error err ->

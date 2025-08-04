@@ -30,4 +30,4 @@ let debug_range_parsing filename =
       ) else Printf.printf "  line too short\n"
   ) lines
 
-let () = debug_range_parsing "../boundary_logic/domain_definitions/blood_pressure.yaml"
+let () = debug_range_parsing "boundary_logic/domain_definitions/blood_pressure.yaml"

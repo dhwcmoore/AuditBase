@@ -7,9 +7,15 @@ lib: [
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cma" {"engine_interface/engine_interface.cma"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmi" {"engine_interface/engine_interface.cmi"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmt" {"engine_interface/engine_interface.cmt"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmti" {"engine_interface/engine_interface.cmti"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmx" {"engine_interface/engine_interface.cmx"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmxa" {"engine_interface/engine_interface.cmxa"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.ml" {"engine_interface/engine_interface.ml"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.mli" {"engine_interface/engine_interface.mli"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__.cmi" {"engine_interface/engine_interface__.cmi"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__.cmt" {"engine_interface/engine_interface__.cmt"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__.cmx" {"engine_interface/engine_interface__.cmx"}
+  "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__.ml" {"engine_interface/engine_interface__.ml"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__Boundary_classifier.cmi" {"engine_interface/engine_interface__Boundary_classifier.cmi"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__Boundary_classifier.cmt" {"engine_interface/engine_interface__Boundary_classifier.cmt"}
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface__Boundary_classifier.cmx" {"engine_interface/engine_interface__Boundary_classifier.cmx"}
@@ -43,7 +49,6 @@ lib: [
   "_build/install/default/lib/veribound-process-architecture/flocq_engine/flocq_engine__Shared_types.cmx" {"flocq_engine/flocq_engine__Shared_types.cmx"}
   "_build/install/default/lib/veribound-process-architecture/flocq_engine/flocq_engines.ml" {"flocq_engine/flocq_engines.ml"}
   "_build/install/default/lib/veribound-process-architecture/flocq_engine/shared_types.ml" {"flocq_engine/shared_types.ml"}
-  "_build/install/default/lib/veribound-process-architecture/runtime_classifier/classifier.ml" {"runtime_classifier/classifier.ml"}
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.a" {"runtime_classifier/runtime_classifier.a"}
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.cma" {"runtime_classifier/runtime_classifier.cma"}
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.cmi" {"runtime_classifier/runtime_classifier.cmi"}
@@ -51,9 +56,6 @@ lib: [
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.cmx" {"runtime_classifier/runtime_classifier.cmx"}
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.cmxa" {"runtime_classifier/runtime_classifier.cmxa"}
   "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier.ml" {"runtime_classifier/runtime_classifier.ml"}
-  "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier__Classifier.cmi" {"runtime_classifier/runtime_classifier__Classifier.cmi"}
-  "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier__Classifier.cmt" {"runtime_classifier/runtime_classifier__Classifier.cmt"}
-  "_build/install/default/lib/veribound-process-architecture/runtime_classifier/runtime_classifier__Classifier.cmx" {"runtime_classifier/runtime_classifier__Classifier.cmx"}
 ]
 libexec: [
   "_build/install/default/lib/veribound-process-architecture/engine_interface/engine_interface.cmxs" {"engine_interface/engine_interface.cmxs"}
@@ -70,5 +72,6 @@ bin: [
   "_build/install/default/bin/veribound"
 ]
 doc: [
+  "_build/install/default/doc/veribound-process-architecture/LICENSE"
   "_build/install/default/doc/veribound-process-architecture/README.md"
 ]

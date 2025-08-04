@@ -15,9 +15,15 @@
    engine_interface/engine_interface.cma
    engine_interface/engine_interface.cmi
    engine_interface/engine_interface.cmt
+   engine_interface/engine_interface.cmti
    engine_interface/engine_interface.cmx
    engine_interface/engine_interface.cmxa
    engine_interface/engine_interface.ml
+   engine_interface/engine_interface.mli
+   engine_interface/engine_interface__.cmi
+   engine_interface/engine_interface__.cmt
+   engine_interface/engine_interface__.cmx
+   engine_interface/engine_interface__.ml
    engine_interface/engine_interface__Boundary_classifier.cmi
    engine_interface/engine_interface__Boundary_classifier.cmt
    engine_interface/engine_interface__Boundary_classifier.cmx
@@ -51,17 +57,13 @@
    flocq_engine/flocq_engine__Shared_types.cmx
    flocq_engine/flocq_engines.ml
    flocq_engine/shared_types.ml
-   runtime_classifier/classifier.ml
    runtime_classifier/runtime_classifier.a
    runtime_classifier/runtime_classifier.cma
    runtime_classifier/runtime_classifier.cmi
    runtime_classifier/runtime_classifier.cmt
    runtime_classifier/runtime_classifier.cmx
    runtime_classifier/runtime_classifier.cmxa
-   runtime_classifier/runtime_classifier.ml
-   runtime_classifier/runtime_classifier__Classifier.cmi
-   runtime_classifier/runtime_classifier__Classifier.cmt
-   runtime_classifier/runtime_classifier__Classifier.cmx))
+   runtime_classifier/runtime_classifier.ml))
  (libexec
   (engine_interface/engine_interface.cmxs
    flocq_engine/flocq_engine.cmxs
@@ -74,7 +76,7 @@
    test_multiple_domains
    test_overlap_check
    veribound))
- (doc (README.md)))
+ (doc (LICENSE README.md)))
 (library
  (name veribound-process-architecture.engine_interface)
  (kind normal)
@@ -85,22 +87,19 @@
   (byte engine_interface/engine_interface.cma)
   (native engine_interface/engine_interface.cmxs))
  (native_archives engine_interface/engine_interface.a)
- (requires
-  veribound-process-architecture.flocq_engine
-  veribound-process-architecture.runtime_classifier
-  yojson)
+ (requires yojson veribound-process-architecture.runtime_classifier)
  (main_module_name Engine_interface)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name engine_interface)
+     (obj_name engine_interface__)
      (visibility public)
      (kind alias)
      (source
-      (path Engine_interface)
-      (impl (path engine_interface/engine_interface.ml-gen))))
+      (path Engine_interface__)
+      (impl (path engine_interface/engine_interface__.ml-gen))))
     (name Engine_interface)
     (modules
      (module
@@ -114,7 +113,14 @@
       (visibility public)
       (source
        (path Domain_manager)
-       (impl (path engine_interface/domain_manager.ml))))))
+       (impl (path engine_interface/domain_manager.ml))))
+     (module
+      (obj_name engine_interface)
+      (visibility public)
+      (source
+       (path Engine_interface)
+       (intf (path engine_interface/engine_interface.mli))
+       (impl (path engine_interface/engine_interface.ml))))))
    (wrapped true))))
 (library
  (name veribound-process-architecture.flocq_engine)
@@ -178,24 +184,13 @@
   (byte runtime_classifier/runtime_classifier.cma)
   (native runtime_classifier/runtime_classifier.cmxs))
  (native_archives runtime_classifier/runtime_classifier.a)
+ (requires yojson)
  (main_module_name Runtime_classifier)
  (modes byte native)
  (modules
-  (wrapped
-   (group
-    (alias
-     (obj_name runtime_classifier)
-     (visibility public)
-     (kind alias)
-     (source
-      (path Runtime_classifier)
-      (impl (path runtime_classifier/runtime_classifier.ml-gen))))
-    (name Runtime_classifier)
-    (modules
-     (module
-      (obj_name runtime_classifier__Classifier)
-      (visibility public)
-      (source
-       (path Classifier)
-       (impl (path runtime_classifier/classifier.ml))))))
-   (wrapped true))))
+  (singleton
+   (obj_name runtime_classifier)
+   (visibility public)
+   (source
+    (path Runtime_classifier)
+    (impl (path runtime_classifier/runtime_classifier.ml))))))
