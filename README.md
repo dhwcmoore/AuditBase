@@ -316,4 +316,5 @@ Copyright 2025 Duston Moore
 
 ## Architecture Documentation
 
-For detailed system architecture diagrams, see: `veribound_architecture_graph.svg`
+For detailed system architecture diagrams, see: `veribound_architecture_graph.svg`# Validation Check
+Always run './test_all_domains.sh' before committing!
