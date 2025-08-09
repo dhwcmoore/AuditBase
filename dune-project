@@ -1,9 +1,7 @@
-(lang dune 3.11)
+(lang dune 3.0)
 
-(warnings (deprecated_coq_lang_lt_08 disabled))
-
-(name veribound-process-architecture)
-(using coq 0.3)
 (package
  (name veribound-process-architecture)
- (depends ocaml dune yojson digestif))
+ (depends ocaml dune yojson))
+
+(using coq 0.3)
