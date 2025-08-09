@@ -1,2 +1,11 @@
+# Build outputs
 _build/
-_build/
+*.o
+*.cmx
+*.cmi
+*.cmti
+*.exe
+
+# Patches / backups
+*.patch
+*before_patch.md
