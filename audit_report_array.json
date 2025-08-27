@@ -1,0 +1,107 @@
+[
+  {
+    "domain": "AML Cash Transaction Monitoring",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "EPA Air Quality Index (Fixed)",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "EPA Air Quality Index (Fixed)",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Basel III Corporate Loans",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Basel III Capital Adequacy",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Blood Pressure Classification",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "CCAR Capital Adequacy",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "CCAR Loss Rate Classification",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "CCAR Stress Testing",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "CCAR Comprehensive Capital Analysis",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Clinical Trial Safety Monitoring",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Diabetes Classification",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "FRTB Market Risk Capital",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Basel III Liquidity Risk",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Medical Classification",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Class III Medical Device Performance",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "MiFID II Best Execution",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Nuclear Emergency Action Levels",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Nuclear Radiation Protection",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Nuclear Reactor Protection System",
+    "monotonicity": true,
+    "failures": []
+  },
+  {
+    "domain": "Pharmaceutical Dose Safety Classification",
+    "monotonicity": true,
+    "failures": []
+  }
+]

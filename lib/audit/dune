@@ -1,0 +1,4 @@
+(library
+ (name audit)
+ (modules audit_types audit_generators audit_properties audit_runner)
+ (libraries qcheck yojson))

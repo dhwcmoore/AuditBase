@@ -1,0 +1,4 @@
+(executable
+ (name audit_main)
+ (modules audit_main)
+ (libraries audit veribound-process-architecture.engine_interface unix str))
