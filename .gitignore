@@ -1,11 +1,26 @@
-# Build outputs
+# OCaml / Dune
 _build/
-*.o
-*.cmx
-*.cmi
+*.install
+*.merlin
+*.cmt
 *.cmti
-*.exe
+*.cmi
+*.cmx
+*.o
+*.a
+*.cmxs
+*.annot
 
-# Patches / backups
-*.patch
-*before_patch.md
+# Coq
+*.vo
+*.vos
+*.vok
+*.glob
+.coq-native/
+
+# Editor/OS
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
