@@ -46,25 +46,25 @@ let classify_via_cli domain value =
     if Str.string_match category_regex output 0 then
       Str.matched_group 1 output
     else "Unknown" in
-  
+
   let confidence =
     if Str.string_match confidence_regex output 0 then  
       Str.matched_group 1 output
-    else "Unknown" in
-  
+    else "Unknown"
+  in
   (category, confidence)
 
 (* Route handlers *)
+
 let handle_classify body =
   try
     let domain = extract_json_field body "domain" in
     let value = extract_json_number body "value" in
     let (category, confidence) = classify_via_cli domain value in
-    
     let response_json = sprintf {|{
   "classification": {
     "input_value": "%.2f",
-    "category": "%s", 
+    "category": "%s",
     "confidence": "%s",
     "engine": "veribound_cli",
     "domain": "%s",
@@ -76,8 +76,8 @@ let handle_classify body =
   }
 }|} value category confidence domain (Unix.time ()) in
     http_response response_json
-  with
-    exn -> error_response "CLASSIFICATION_ERROR" (Printexc.to_string exn)
+  with exn ->
+    error_response "CLASSIFICATION_ERROR" (Printexc.to_string exn)
 
 let handle_health () =
   let health_json = sprintf {|{
